@@ -10,4 +10,6 @@ const authRequired = (req, res, next) => {
     }
 }
 
+//INDEX
+
 module.exports = router
