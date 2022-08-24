@@ -11,5 +11,12 @@ const authRequired = (req, res, next) => {
 }
 
 //INDEX
+router.get(`/`, (req, res) => {
+    Item.find({}, (err, allItems) => {
+        res.render(`index.ejs`, {
+            items: allItems
+        })
+    })
+})
 
 module.exports = router
