@@ -17,7 +17,7 @@ router.post(`/register`, (req, res) => {
             User.create(req.body, (err, createdUser) => {
                 console.log(createdUser)
                 req.session.createdUser = createdUser
-                res.redirect(`/cards`)
+                res.redirect(`/cart`)
             })
         }
     })
