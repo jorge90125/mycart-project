@@ -43,9 +43,9 @@ router.post(`/signin`, (req, res) => {
     })
 })
 
-// router.get(`/signout`, (req, res) => {
-//     req.session.destroy()
-//     res.redirect(`/cart`)
-// })
+router.get(`/signout`, (req, res) => {
+    req.session.destroy()
+    res.redirect(`/cart`)
+})
 
 module.exports = router
