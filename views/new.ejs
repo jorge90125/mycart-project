@@ -1,0 +1,25 @@
+<%- include(`./partials/header.ejs`) %>
+
+    <h1>New Cart Item</h1>
+    <form action="/cart" method="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="type">Item Type:</label>
+            <select name="type" id="type">
+                <option value="produce">Produce</option>
+                <option value="meat">Meat</option>
+                <option value="bakery">Bakery</option>
+                <option value="toiletries">Toiletries</option>
+                <option value="medicine">Medicine</option>
+                <option value="dairy">Dairy</option>
+                <option value="snacks">Snacks</option>
+                <option value="frozen">Frozen</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+    </form>
+
+<%- include(`./partials/footer.ejs`) %>
