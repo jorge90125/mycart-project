@@ -7,9 +7,9 @@ const itemSchema = new mongoose.Schema({
     price: Number,
     priority: Number,
     coupon: Boolean,
-    comment: String,
     outOfStock: Boolean,
     obtained: Boolean,
+    comment: String,
     img: String
 })
 
