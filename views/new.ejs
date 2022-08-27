@@ -24,6 +24,40 @@
             <label for="qty">Quantity:</label>
             <input type="number" name="qty" id="qty">
         </div>
+        <div>
+            <label for="price">Price:</label>
+            <input type="number" name="price" id="price" step="0.01">
+        </div>
+        <div>
+            <label for="priority">Priority:</label>
+            <select name="priority" id="priority">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div>
+            <label for="coupon">Coupon:</label>
+            <input type="checkbox" name="coupon" id="coupon">
+        </div>
+        <div>
+            <label for="outOfStock">Out of Stock:</label>
+            <input type="checkbox" name="outOfStock" id="outOfStock">
+        </div>
+        <div>
+            <label for="obtained">Obtained:</label>
+            <input type="checkbox" name="obtained" id="obtained">
+        </div>
+        <div>
+            <label for="comment">Comment:</label>
+            <textarea name="comment" id="comment" cols="16" rows="8" placeholder="Enter Comment"></textarea>
+        </div>
+        <div>
+            <label for="img">Image URL:</label>
+            <input type="text" name="img" id="img">
+        </div>
     </form>
 
 <%- include(`./partials/footer.ejs`) %>

@@ -38,6 +38,11 @@ app.use((req, res, next) => {
 app.use(`/cart`, itemController)
 app.use(`/users`, userController)
 
+//HOME PAGE
+app.get(`/`, (req, res) => {
+    res.render(`home.ejs`)
+})
+
 //PORT LISTENER
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}!!!`)
