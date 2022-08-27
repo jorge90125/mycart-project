@@ -1,0 +1,11 @@
+body {
+    background-color: lavender;
+}
+
+.outOfStock {
+    color: red;
+}
+
+.obtained {
+    color: aqua;
+}

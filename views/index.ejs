@@ -1,6 +1,22 @@
 <%- include(`./partials/header.ejs`) %>
 
-    <h1>MyCart</h1>
+    <div>
+        <h1>MyCart</h1>
+        <ul>
+            <% for (let i = 0; i < items.length; i++) { %>
+            <% if (items[i].obtained === true) { %>
+            <li class="obtained">
+            <% } else if (items[i].outOfStock === true) { %>
+            <li class="outOfStock">
+            <% } else { %>
+            <li>
+            <% } %>
+                <h2><a href="/cart/<%= items[i].id %>"><%= items[i].name %></a></h2>
+                <%= items[i].price %>
+            </li>
+            <% } %>
+        </ul>
+    </div>
 
     <button onclick="location.href=`/cart/new`">Create New Cart Item</button>
     <button onclick="location.href=`/users/register`">Register</button>
