@@ -66,14 +66,14 @@ router.get(`/:id`, (req, res) => {
 })
 
 //DELETE
-router.delete(`/:id`, (req, res) => {
+router.delete(`/:id`, authRequired, (req, res) => {
     Item.findByIdAndRemove(req.params.id, (err, data) => {
         res.redirect(`/cart`)
     })
 })
 
 //EDIT
-router.get(`/:id/edit`, (req, res) => {
+router.get(`/:id/edit`, authRequired, (req, res) => {
     Item.findById(req.params.id, (err, foundItem) => {
         res.render(`edit.ejs`, {
             item: foundItem

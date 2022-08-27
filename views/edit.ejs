@@ -1,6 +1,7 @@
 <%- include(`./partials/header.ejs`) %>
 
     <h1>Edit Page</h1>
+    <button onclick="location.href=`/cart/<%= item.id %>`">Return to Item</button>
     <form action="/cart/<%= item.id %>?_method=PUT" method="POST">
         <div>
             <label for="name">Name:</label>
