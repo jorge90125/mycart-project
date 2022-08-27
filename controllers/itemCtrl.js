@@ -65,6 +65,13 @@ router.get(`/:id`, (req, res) => {
     })
 })
 
+//DELETE
+router.delete(`/:id`, (req, res) => {
+    Item.findByIdAndRemove(req.params.id, (err, data) => {
+        res.redirect(`/cart`)
+    })
+})
+
 //EDIT
 router.get(`/:id/edit`, (req, res) => {
     Item.findById(req.params.id, (err, foundItem) => {
