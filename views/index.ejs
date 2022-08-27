@@ -13,7 +13,9 @@
             <% } %>
                 <h2><a href="/cart/<%= items[i].id %>"><%= items[i].name %></a></h2>
                 $<%= items[i].price %>
-                <button onclick="location.href=`/cart/<%= items[i].id %>/edit`">Edit</button>
+                <button onclick="location.href=`/cart/<%= items[i].id %>/edit`" class="editButton">
+                    <i class="fa-solid fa-pen-to-square fa-2xl"></i>
+                </button>
                 <form action="/cart/<%= items[i].id %>?_method=DELETE" method="POST">
                     <input type="submit" value="DELETE">
                 </form>
@@ -23,8 +25,5 @@
     </div>
 
     <button onclick="location.href=`/cart/new`">Create New Cart Item</button>
-    <button onclick="location.href=`/users/register`">Register</button>
-    <button onclick="location.href=`/users/signin`">Sign In</button>
-    <button onclick="location.href=`/users/signout`">Sign Out</button>
 
 <%- include(`./partials/footer.ejs`) %>

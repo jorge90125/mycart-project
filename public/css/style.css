@@ -2,6 +2,19 @@ body {
     background-color: lavender;
 }
 
+.editButton {
+    border: none;
+    background-color: transparent;
+}
+
+.green {
+    color: lightgreen;
+}
+
+.red{
+    color: red;
+}
+
 .outOfStock {
     color: red;
 }
