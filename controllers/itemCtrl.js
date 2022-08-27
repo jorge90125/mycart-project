@@ -52,4 +52,17 @@ router.post(`/`, (req, res) => {
     })
 })
 
+//SHOW
+router.get(`/:id`, (req, res) => {
+    Item.findById(req.params.id, (err, foundItem) => {
+        if(err) {
+            res.send(err)
+        } else {
+            res.render(`show.ejs`, {
+                item : foundItem
+            })
+        }
+    })
+})
+
 module.exports = router
