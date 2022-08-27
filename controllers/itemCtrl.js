@@ -65,4 +65,13 @@ router.get(`/:id`, (req, res) => {
     })
 })
 
+//EDIT
+router.get(`/:id/edit`, (req, res) => {
+    Item.findById(req.params.id, (err, foundItem) => {
+        res.render(`edit.ejs`, {
+            item: foundItem
+        })
+    })
+})
+
 module.exports = router

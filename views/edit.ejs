@@ -1,0 +1,118 @@
+<%- include(`./partials/header.ejs`) %>
+
+    <h1>Edit Page</h1>
+    <form action="/cart/<%= item.id %>?_method=PUT" method="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="<%= item.name %>">
+        </div>
+        <div>
+            <label for="type">Item Type:</label>
+            <select name="type" id="type">
+                <option value="produce" <% if (item.type === `produce`) { %>
+                    selected
+                    <% } %>
+                    >Produce</option>
+                <option value="meat" <% if (item.type === `meat`) { %>
+                    selected
+                    <% } %>
+                    >Meat</option>
+                <option value="bakery" <% if (item.type === `bakery`) { %>
+                    selected
+                    <% } %>
+                    >Bakery</option>
+                <option value="toiletries" <% if (item.type === `toiletries`) { %>
+                    selected
+                    <% } %>
+                    >Toiletries</option>
+                <option value="medicine" <% if (item.type === `medicine`) { %>
+                    selected
+                    <% } %>
+                    >Medicine</option>
+                <option value="dairy" <% if (item.type === `dairy`) { %>
+                    selected
+                    <% } %>
+                    >Dairy</option>
+                <option value="snacks" <% if (item.type === `snacks`) { %>
+                    selected
+                    <% } %>
+                    >Snacks</option>
+                <option value="frozen" <% if (item.type === `frozen`) { %>
+                    selected
+                    <% } %>
+                    >Frozen</option>
+                <option value="other" <% if (item.type === `other`) { %>
+                    selected
+                    <% } %>
+                    >Other</option>
+            </select>
+        </div>
+        <div>
+            <label for="qty">Quantity:</label>
+            <input type="number" name="qty" id="qty" value="<%= item.qty %>">
+        </div>
+        <div>
+            <label for="price">Price:</label>
+            <input type="number" name="price" id="price" step="0.01" value="<%= item.price %>">
+        </div>
+        <div>
+            <label for="priority">Priority:</label>
+            <select name="priority" id="priority">
+                <option value="1" <% if (item.priority === 1) { %>
+                    selected
+                    <% } %>
+                    >1</option>
+                <option value="2" <% if (item.priority === 2) { %>
+                    selected
+                    <% } %>
+                    >2</option>
+                <option value="3" <% if (item.priority === 3) { %>
+                    selected
+                    <% } %>
+                    >3</option>
+                <option value="4" <% if (item.priority === 4) { %>
+                    selected
+                    <% } %>
+                    >4</option>
+                <option value="5" <% if (item.priority === 5) { %>
+                    selected
+                    <% } %>
+                    >5</option>
+            </select>
+        </div>
+        <div>
+            <label for="coupon">Coupon:</label>
+            <input type="checkbox" name="coupon" id="coupon"
+            <% if(item.coupon === true) { %>
+                checked
+            <% } %>
+            >
+        </div>
+        <div>
+            <label for="outOfStock">Out of Stock:</label>
+            <input type="checkbox" name="outOfStock" id="outOfStock"
+            <% if(item.outOfStock === true) { %>
+                checked
+            <% } %>
+            >
+        </div>
+        <div>
+            <label for="obtained">Obtained:</label>
+            <input type="checkbox" name="obtained" id="obtained"
+            <% if(item.obtained === true) { %>
+                checked
+            <% } %>
+            >
+        </div>
+        <div>
+            <label for="comment">Comment:</label>
+            <textarea name="comment" id="comment" cols="16" rows="8" placeholder="Enter Comment"><%= item.comment %></textarea>
+        </div>
+        <div>
+            <label for="img">Image URL:</label>
+            <input type="text" name="img" id="img" value="<%= item.img %>">
+        </div>
+        <button type="submit">Edit Cart Item</button>
+    </form>
+
+<%- include(`./partials/footer.ejs`) %>

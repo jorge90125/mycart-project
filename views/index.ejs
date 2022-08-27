@@ -12,7 +12,8 @@
             <li>
             <% } %>
                 <h2><a href="/cart/<%= items[i].id %>"><%= items[i].name %></a></h2>
-                <%= items[i].price %>
+                $<%= items[i].price %>
+                <button onclick="location.href=`/cart/<%= items[i].id %>/edit`">Edit</button>
             </li>
             <% } %>
         </ul>
