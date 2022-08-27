@@ -74,4 +74,31 @@ router.get(`/:id/edit`, (req, res) => {
     })
 })
 
+//PUT/UPDATE
+router.put(`/:id`, (req, res) => {
+    if (req.body.coupon === `on`) {
+        req.body.coupon = true
+    } else {
+        req.body.coupon = false
+    }
+    if (req.body.outOfStock === `on`) {
+        req.body.outOfStock = true
+    } else {
+        req.body.outOfStock = false
+    }
+    if (req.body.obtained === `on`) {
+        req.body.obtained = true
+    } else {
+        req.body.obtained = false
+    }
+    Item.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedItem) => {
+        if(err) {
+            console.log(err)
+            res.send(err)
+        } else {
+            res.redirect(`/cart`)
+        }
+    })
+})
+
 module.exports = router
