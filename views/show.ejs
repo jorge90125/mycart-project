@@ -1,112 +1,118 @@
 <%- include(`./partials/header.ejs`) %>
 
     <div class="showDiv">
-        <% if(item.img != ``) { %>
-        <div style="background-image: url(<%=item.img%>);">
-        <% } else if(item.type === `produce`) { %>
-        <div class="produceItem">
-        <% } else if(item.type === `meat`) { %>
-        <div class="meatItem">
-        <% } else if(item.type === `bakery`) { %>
-        <div class="bakeryItem">
-        <% } else if(item.type === `toiletries`) { %>
-        <div class="toiletriesItem">
-        <% } else if(item.type === `medicine`) { %>
-        <div class="medicineItem">
-        <% } else if(item.type === `dairy`) { %>
-        <div class="dairyItem">
-        <% } else if(item.type === `snacks`) { %>
-        <div class="snacksItem">
-        <% } else if(item.type === `frozen`) { %>
-        <div class="frozenItem">
-        <% } else if(item.type === `other`) { %>
-        <div class="otherItem">
-        <% } %>
-            <h1><%= item.name %></h1>
-        </div>
-        <div>
-            <h2>Type:</h2>
-            <%=(item.type.charAt(0).toUpperCase() + item.type.slice(1))%>
-        </div>
-        <div>
-            <h2>Quantity:</h2>
-            <%= item.qty %>
-        </div>
-        <div>
-            <h2>Price:</h2>
-            $<%= item.price %>
-        </div>
-        <div>
-            <h2>Priority:</h2>
-            <div>
-            <% if(item.priority === 1) { %>
-                <span class="fa-solid fa-star fa-xl"></span>
-                <span class="fa-regular fa-star fa-xl"></span>
-                <span class="fa-regular fa-star fa-xl"></span>
-                <span class="fa-regular fa-star fa-xl"></span>
-                <span class="fa-regular fa-star fa-xl"></span>
-            <% } else if(item.priority === 2) { %>
-                <span class="fa-solid fa-star fa-xl"></span>
-                <span class="fa-solid fa-star fa-xl"></span>
-                <span class="fa-regular fa-star fa-xl"></span>
-                <span class="fa-regular fa-star fa-xl"></span>
-                <span class="fa-regular fa-star fa-xl"></span>
-            <% } else if(item.priority === 3) { %>
-                <span class="fa-solid fa-star fa-xl"></span>
-                <span class="fa-solid fa-star fa-xl"></span>
-                <span class="fa-solid fa-star fa-xl"></span>
-                <span class="fa-regular fa-star fa-xl"></span>
-                <span class="fa-regular fa-star fa-xl"></span>
-            <% } else if(item.priority === 4) { %>
-                <span class="fa-solid fa-star fa-xl"></span>
-                <span class="fa-solid fa-star fa-xl"></span>
-                <span class="fa-solid fa-star fa-xl"></span>
-                <span class="fa-solid fa-star fa-xl"></span>
-                <span class="fa-regular fa-star fa-xl"></span>
-            <% } else if(item.priority === 5) { %>
-                <span class="fa-solid fa-star fa-xl"></span>
-                <span class="fa-solid fa-star fa-xl"></span>
-                <span class="fa-solid fa-star fa-xl"></span>
-                <span class="fa-solid fa-star fa-xl"></span>
-                <span class="fa-solid fa-star fa-xl"></span>
+        <div class="showTitle">
+            <% if(item.img != ``) { %>
+            <div style="background-image: url(<%=item.img%>);">
+            <% } else if(item.type === `produce`) { %>
+            <div class="produceItem">
+            <% } else if(item.type === `meat`) { %>
+            <div class="meatItem">
+            <% } else if(item.type === `bakery`) { %>
+            <div class="bakeryItem">
+            <% } else if(item.type === `toiletries`) { %>
+            <div class="toiletriesItem">
+            <% } else if(item.type === `medicine`) { %>
+            <div class="medicineItem">
+            <% } else if(item.type === `dairy`) { %>
+            <div class="dairyItem">
+            <% } else if(item.type === `snacks`) { %>
+            <div class="snacksItem">
+            <% } else if(item.type === `frozen`) { %>
+            <div class="frozenItem">
+            <% } else if(item.type === `other`) { %>
+            <div class="otherItem">
             <% } %>
+                <h1 class="showH1"><%= item.name %></h1>
             </div>
         </div>
-        <div>
-            <h2>Coupon:</h2>
-            <% if(item.coupon === true) { %>
-                <i class="fa-solid fa-check fa-2xl green"></i>
-            <% } else { %>
-                <i class="fa-solid fa-ban fa-2xl red"></i>
-            <% } %>
-        </div>
-        <div>
-            <h2>Out of Stock:</h2>
-            <% if(item.outOfStock === true) { %>
-                <i class="fa-solid fa-check fa-2xl green"></i>
-            <% } else { %>
-                <i class="fa-solid fa-ban fa-2xl red"></i>
-            <% } %>
-        </div>
-        <div>
-            <h2>Obtained:</h2>
-            <% if(item.obtained === true) { %>
-                <i class="fa-solid fa-check fa-2xl green"></i>
-            <% } else { %>
-                <i class="fa-solid fa-ban fa-2xl red"></i>
-            <% } %>
-        </div>
-        <div>
-            <h2>Comment:</h2>
-            <%= item.comment %>
-        </div>
-        <div>
-            <button onclick="location.href=`/cart/<%= item.id %>/edit`">
-                Edit Item
-            </button>
-            <form action="/cart/<%= item.id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete Item">
-            </form>
+        <div class="showContent">
+            <div class="showItem">
+                <h2>Type:</h2>
+                <%=(item.type.charAt(0).toUpperCase() + item.type.slice(1))%>
+            </div>
+            <div class="showItem">
+                <h2>Quantity:</h2>
+                <%= item.qty %>
+            </div>
+            <div class="showItem">
+                <h2>Price:</h2>
+                $<%= item.price %>
+            </div>
+            <div class="showItem">
+                <h2>Priority:</h2>
+                <div>
+                <% if(item.priority === 1) { %>
+                    <span class="fa-solid fa-star fa-xl"></span>
+                    <span class="fa-regular fa-star fa-xl"></span>
+                    <span class="fa-regular fa-star fa-xl"></span>
+                    <span class="fa-regular fa-star fa-xl"></span>
+                    <span class="fa-regular fa-star fa-xl"></span>
+                <% } else if(item.priority === 2) { %>
+                    <span class="fa-solid fa-star fa-xl"></span>
+                    <span class="fa-solid fa-star fa-xl"></span>
+                    <span class="fa-regular fa-star fa-xl"></span>
+                    <span class="fa-regular fa-star fa-xl"></span>
+                    <span class="fa-regular fa-star fa-xl"></span>
+                <% } else if(item.priority === 3) { %>
+                    <span class="fa-solid fa-star fa-xl"></span>
+                    <span class="fa-solid fa-star fa-xl"></span>
+                    <span class="fa-solid fa-star fa-xl"></span>
+                    <span class="fa-regular fa-star fa-xl"></span>
+                    <span class="fa-regular fa-star fa-xl"></span>
+                <% } else if(item.priority === 4) { %>
+                    <span class="fa-solid fa-star fa-xl"></span>
+                    <span class="fa-solid fa-star fa-xl"></span>
+                    <span class="fa-solid fa-star fa-xl"></span>
+                    <span class="fa-solid fa-star fa-xl"></span>
+                    <span class="fa-regular fa-star fa-xl"></span>
+                <% } else if(item.priority === 5) { %>
+                    <span class="fa-solid fa-star fa-xl"></span>
+                    <span class="fa-solid fa-star fa-xl"></span>
+                    <span class="fa-solid fa-star fa-xl"></span>
+                    <span class="fa-solid fa-star fa-xl"></span>
+                    <span class="fa-solid fa-star fa-xl"></span>
+                <% } %>
+                </div>
+            </div>
+            <div class="showItem">
+                <h2>Coupon:</h2>
+                <% if(item.coupon === true) { %>
+                    <i class="fa-solid fa-check fa-2xl green"></i>
+                <% } else { %>
+                    <i class="fa-solid fa-ban fa-2xl red"></i>
+                <% } %>
+            </div>
+            <div class="showItem">
+                <h2>Out of Stock:</h2>
+                <% if(item.outOfStock === true) { %>
+                    <i class="fa-solid fa-check fa-2xl green"></i>
+                <% } else { %>
+                    <i class="fa-solid fa-ban fa-2xl red"></i>
+                <% } %>
+            </div>
+            <div class="showItem">
+                <h2>Obtained:</h2>
+                <% if(item.obtained === true) { %>
+                    <i class="fa-solid fa-check fa-2xl green"></i>
+                <% } else { %>
+                    <i class="fa-solid fa-ban fa-2xl red"></i>
+                <% } %>
+            </div>
+            <div class="showItem">
+                <h2>Comment:</h2>
+                <%= item.comment %>
+            </div>
+            <div class="showBtn">
+                <button class="navBtn" onclick="location.href=`/cart/<%= item.id %>/edit`">
+                    Edit Item
+                </button>
+            </div>
+            <div class="showBtn">
+                <form action="/cart/<%= item.id %>?_method=DELETE" method="POST">
+                    <input type="submit" class="navBtn" value="Delete Item">
+                </form>
+            </div>
         </div>
     </div>
 

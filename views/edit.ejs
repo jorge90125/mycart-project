@@ -1,8 +1,8 @@
 <%- include(`./partials/header.ejs`) %>
 
     <h1>Edit Page</h1>
-    <button onclick="location.href=`/cart/<%= item.id %>`">Return to Item</button>
-    <form action="/cart/<%= item.id %>?_method=PUT" method="POST">
+    <button class="navBtn backFromEdit" onclick="location.href=`/cart/<%= item.id %>`">Return to Item</button>
+    <form class="forms" action="/cart/<%= item.id %>?_method=PUT" method="POST">
         <div>
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" value="<%= item.name %>">
@@ -83,7 +83,7 @@
         </div>
         <div>
             <label for="coupon">Coupon:</label>
-            <input type="checkbox" name="coupon" id="coupon"
+            <input type="checkbox" name="coupon" class="checkbox" id="coupon"
             <% if(item.coupon === true) { %>
                 checked
             <% } %>
@@ -91,7 +91,7 @@
         </div>
         <div>
             <label for="outOfStock">Out of Stock:</label>
-            <input type="checkbox" name="outOfStock" id="outOfStock"
+            <input type="checkbox" name="outOfStock" class="checkbox" id="outOfStock"
             <% if(item.outOfStock === true) { %>
                 checked
             <% } %>
@@ -99,7 +99,7 @@
         </div>
         <div>
             <label for="obtained">Obtained:</label>
-            <input type="checkbox" name="obtained" id="obtained"
+            <input type="checkbox" name="obtained" class="checkbox" id="obtained"
             <% if(item.obtained === true) { %>
                 checked
             <% } %>
@@ -113,7 +113,7 @@
             <label for="img">Image URL:</label>
             <input type="text" name="img" id="img" value="<%= item.img %>">
         </div>
-        <button type="submit">Edit Cart Item</button>
+        <button type="submit" class="navBtn editBtn">Edit Cart Item</button>
     </form>
 
 <%- include(`./partials/footer.ejs`) %>

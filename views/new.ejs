@@ -1,7 +1,7 @@
 <%- include(`./partials/header.ejs`) %>
 
     <h1>New Cart Item</h1>
-    <form action="/cart" method="POST">
+    <form class="forms" action="/cart" method="POST">
         <div>
             <label for="name">Name:</label>
             <input type="text" name="name" id="name">
@@ -40,15 +40,15 @@
         </div>
         <div>
             <label for="coupon">Coupon:</label>
-            <input type="checkbox" name="coupon" id="coupon">
+            <input type="checkbox" name="coupon" id="coupon" class="checkbox">
         </div>
         <div>
             <label for="outOfStock">Out of Stock:</label>
-            <input type="checkbox" name="outOfStock" id="outOfStock">
+            <input type="checkbox" name="outOfStock" id="outOfStock" class="checkbox">
         </div>
         <div>
             <label for="obtained">Obtained:</label>
-            <input type="checkbox" name="obtained" id="obtained">
+            <input type="checkbox" name="obtained" id="obtained" class="checkbox">
         </div>
         <div>
             <label for="comment">Comment:</label>
@@ -58,7 +58,7 @@
             <label for="img">Image URL:</label>
             <input type="text" name="img" id="img">
         </div>
-        <button type="submit">Create New Cart Item</button>
+        <button type="submit" class="navBtn editBtn">Create New Cart Item</button>
     </form>
 
 <%- include(`./partials/footer.ejs`) %>

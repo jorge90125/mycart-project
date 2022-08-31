@@ -137,6 +137,151 @@ a:visited {
     text-decoration: line-through;
 }
 
+.forms {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label, input, select {
+    font-size: 30px;
+}
+
+.checkbox {
+    height: 30px;
+    width: 30px;
+}
+
+.backFromEdit {
+    margin-bottom: 15px;
+}
+
+.editBtn {
+    width: fit-content;
+    background-color: #778da9;
+}
+
+.showContent {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.showItem {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #1b263b;
+    width: 70%;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    font-size: 25px;
+}
+
+.showBtn {
+    display: flex;
+    justify-content: center;
+}
+
+.showTitle {
+    background-color: #415a77;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 200px;
+    border-bottom: 3px solid #1b263b;
+}
+
+.showH1 {
+    background-color: #778da9;
+    margin: auto;
+    padding: auto;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    font-size: 50px;
+    border-radius: 30px;
+    border: 4px solid #1b263b;
+}
+
+.produceItem {
+    display: flex;
+    width: 600px;
+    background-image: url("/images/produce.jpeg");
+    justify-content: center;
+}
+
+.meatItem {
+    display: flex;
+    width: 600px;
+    background-image: url("/images/meat.jpeg");
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+}
+
+.bakeryItem {
+    display: flex;
+    width: 600px;
+    background-image: url("/images/bakery.jpeg");
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+}
+
+.toiletriesItem {
+    display: flex;
+    width: 600px;
+    background-image: url("/images/toiletries.webp");
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+}
+
+.medicineItem {
+    display: flex;
+    width: 600px;
+    background-image: url("/images/medicine.webp");
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+}
+
+.dairyItem {
+    display: flex;
+    width: 600px;
+    background-image: url("/images/dairy.jpg");
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+}
+
+.snacksItem {
+    display: flex;
+    width: 600px;
+    background-image: url("/images/snacks.jpeg");
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+}
+
+.frozenItem {
+    display: flex;
+    width: 600px;
+    background-image: url("/images/frozen.jpeg");
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+}
+
+.otherItem {
+    display: flex;
+    width: 600px;
+    background-image: url("/images/other.webp");
+    background-position: center;
+    justify-content: center;
+}
+
 center {
     margin-top: 20px;
 }
