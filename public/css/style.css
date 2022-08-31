@@ -1,10 +1,118 @@
 body {
-    background-color: lavender;
+    background-color: #e0e1dd;
+    font-family: 'Fredoka One', cursive;
+}
+
+nav {
+    background-color: #858585;
+    border-top: 3px solid #1b263b;
+    border-bottom: 3px solid #1b263b;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0px;
+}
+
+.navBtn {
+    border: 2px solid #1b263b;
+    border-radius: 10px;
+    background-color: #415a77;
+    font-size: 20px;
+    color: #e0e1dd;
+}
+
+h1 {
+    background-color: #778da9;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    padding: 15px;
+    justify-content: space-evenly;
+    font-size: 50px;
+    border-bottom: 3px solid #1b263b;
+}
+
+h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+#homeDiv {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 10px;
+}
+
+#homeBtn {
+    border: 5px solid #1b263b;
+    border-radius: 10px;
+    background-color: #415a77;
+    font-size: 50px;
+    color: #e0e1dd;
+}
+
+#indexList {
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 30px;
+    gap: 100px;
+}
+
+.liLink {
+    text-decoration: none;
+    color: #1b263b;
+}
+
+a:visited {
+    color: #1b263b;
+}
+
+.liPrice {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.hrOutOfStock {
+    width: 90%;
+    position: absolute;
+    height: 2px;
+    background-color: red;
+}
+
+.hrObtained {
+    width: 90%;
+    position: absolute;
+    height: 2px;
+    background-color: #1b263b;
 }
 
 .editButton {
     border: none;
     background-color: transparent;
+}
+
+#createBtnDiv {
+    display: flex;
+    justify-content: center;
+}
+
+#createBtn {
+    border: 5px solid #1b263b;
+    border-radius: 10px;
+    background-color: #415a77;
+    font-size: 40px;
+    color: #e0e1dd;
 }
 
 .green {
@@ -17,8 +125,18 @@ body {
 
 .outOfStock {
     color: red;
+    text-decoration: line-through;
+}
+
+.outOfStock:visited {
+    color: red;
+    text-decoration: line-through;
 }
 
 .obtained {
-    color: aqua;
+    text-decoration: line-through;
+}
+
+center {
+    margin-top: 20px;
 }

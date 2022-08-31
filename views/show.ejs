@@ -1,7 +1,29 @@
 <%- include(`./partials/header.ejs`) %>
 
     <div class="showDiv">
-        <h1><%= item.name %></h1>
+        <% if(item.img != ``) { %>
+        <div style="background-image: url(<%=item.img%>);">
+        <% } else if(item.type === `produce`) { %>
+        <div class="produceItem">
+        <% } else if(item.type === `meat`) { %>
+        <div class="meatItem">
+        <% } else if(item.type === `bakery`) { %>
+        <div class="bakeryItem">
+        <% } else if(item.type === `toiletries`) { %>
+        <div class="toiletriesItem">
+        <% } else if(item.type === `medicine`) { %>
+        <div class="medicineItem">
+        <% } else if(item.type === `dairy`) { %>
+        <div class="dairyItem">
+        <% } else if(item.type === `snacks`) { %>
+        <div class="snacksItem">
+        <% } else if(item.type === `frozen`) { %>
+        <div class="frozenItem">
+        <% } else if(item.type === `other`) { %>
+        <div class="otherItem">
+        <% } %>
+            <h1><%= item.name %></h1>
+        </div>
         <div>
             <h2>Type:</h2>
             <%=(item.type.charAt(0).toUpperCase() + item.type.slice(1))%>

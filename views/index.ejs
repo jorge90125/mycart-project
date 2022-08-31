@@ -1,29 +1,56 @@
 <%- include(`./partials/header.ejs`) %>
 
     <div>
-        <h1>MyCart</h1>
-        <ul>
+        <h1><i class="fa-solid fa-cart-shopping"></i>MyCart<i class="fa-solid fa-cart-shopping"></i></h1>
+        <ul id="indexList">
             <% for (let i = 0; i < items.length; i++) { %>
             <% if (items[i].obtained === true) { %>
             <li class="obtained">
-            <% } else if (items[i].outOfStock === true) { %>
-            <li class="outOfStock">
-            <% } else { %>
-            <li>
-            <% } %>
-                <h2><a href="/cart/<%= items[i].id %>"><%= items[i].name %></a></h2>
-                $<%= items[i].price %>
+                <h2><a href="/cart/<%= items[i].id %>" class="liLink"><%= items[i].name %></a></h2>
+                <div class="liPrice">
+                    $<%= items[i].price %> each
+                </div>
                 <button onclick="location.href=`/cart/<%= items[i].id %>/edit`" class="editButton">
                     <i class="fa-solid fa-pen-to-square fa-2xl"></i>
                 </button>
                 <form action="/cart/<%= items[i].id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="DELETE">
+                    <input class="navBtn" type="submit" value="DELETE">
+                </form>
+                <hr class="hrObtained">
+            </li>
+            <% } else if (items[i].outOfStock === true) { %>
+            <li class="outOfStock">
+                <h2><a href="/cart/<%= items[i].id %>" class="liLink outOfStock"><%= items[i].name %></a></h2>
+                <div class="liPrice">
+                    $<%= items[i].price %> each
+                </div>
+                <button onclick="location.href=`/cart/<%= items[i].id %>/edit`" class="editButton">
+                    <i class="fa-solid fa-pen-to-square fa-2xl outOfStock"></i>
+                </button>
+                <form action="/cart/<%= items[i].id %>?_method=DELETE" method="POST">
+                    <input class="navBtn" type="submit" value="DELETE">
+                </form>
+                <hr class="hrOutOfStock">
+            </li>
+            <% } else { %>
+            <li>
+                <h2><a href="/cart/<%= items[i].id %>" class="liLink"><%= items[i].name %></a></h2>
+                <div class="liPrice">
+                    $<%= items[i].price %> each
+                </div>
+                <button onclick="location.href=`/cart/<%= items[i].id %>/edit`" class="editButton">
+                    <i class="fa-solid fa-pen-to-square fa-2xl"></i>
+                </button>
+                <form action="/cart/<%= items[i].id %>?_method=DELETE" method="POST">
+                    <input class="navBtn" type="submit" value="DELETE">
                 </form>
             </li>
             <% } %>
+            <% } %>
         </ul>
     </div>
-
-    <button onclick="location.href=`/cart/new`">Create New Cart Item</button>
+    <div id="createBtnDiv">
+        <button onclick="location.href=`/cart/new`" id="createBtn">Create New Cart Item</button>
+    </div>
 
 <%- include(`./partials/footer.ejs`) %>
