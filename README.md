@@ -6,6 +6,13 @@ MyCart Project - GA SEI Flex Project #2
 * Edit/Delete Items
 * Calculate price total for cart
 
+## Utilized Skills
+* Javascript
+* Express.js
+* CSS
+* MongoDB
+* Node.js
+
 ## Wireframes
 Register Screen: https://www.figma.com/file/fjiMeZEAuoNSrTgLX1ohyg/Register?node-id=0%3A1 <br>
 Sign-Screen: https://www.figma.com/file/lerV8mSAUlDbhXCPuoCT73/Sign-In?node-id=0%3A1 <br>
